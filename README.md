@@ -1,2 +1,2 @@
 # js2018-sp
-Meow meow meow meow
+This is basically just a repository woohoo
