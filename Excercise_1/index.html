@@ -46,7 +46,13 @@ function myFunction() {
 }
 
 function submit() {
+	var node = document.getElementById("grid");
+	while (node.hasChildNodes()) {
+  	node.removeChild(node.lastChild);
+	}
 	n = parseInt(document.getElementById("sizeinput").value);
+	var table = document.getElementById("grid");
+	var rows = table.rows.length;
 	myFunction();
 }
 
