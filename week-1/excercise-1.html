@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+td {
+	width:50px;
+	height: 50px;
+}
+table {
+	width:100%;
+}
+.filled {
+	background-color: black;
+}
+</style>
+</head>
+<body>
+
+<table id="grid">
+</table>
+
+<input id="sizeinput">
+</input>
+<button id="submitbutton" onclick="submit()">Submit here!
+</button>
+
+<script>
+var n = 5;
+function myFunction() {
+    var t = document.getElementById("grid");
+		for (var i = 0; i < n; i++) {
+			var row = t.insertRow(i);
+			for (var j = 0; j < n; j++) {
+				var cell = row.insertCell(j);
+				if (i == j) {
+					cell.classList.add("filled");
+				}
+				if (i + j == n - 1) {
+					cell.classList.add("filled");
+				}
+			}
+		}
+}
+function submit() {
+	var node = document.getElementById("grid");
+	while (node.hasChildNodes()) {
+  	node.removeChild(node.lastChild);
+	}
+	n = parseInt(document.getElementById("sizeinput").value);
+	var table = document.getElementById("grid");
+	var rows = table.rows.length;
+	myFunction();
+}
+myFunction();
+</script>
+</body>
+</html>
