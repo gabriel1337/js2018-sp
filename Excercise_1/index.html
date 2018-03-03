@@ -3,6 +3,20 @@
 <head>
 <script>
 var n = 0;
+
+function myCreateFunction() {
+    var table = document.getElementById("field");
+		for (int i = 0; i < n; i++) {
+			var row = table.insertRow(0);
+		}
+}
+
+for (int i = 0; i < n; i++) {
+	draw_to_table(i, i);
+}
+for (int i = 0; i < n; i++) {
+	draw_to_table(i, n-i);
+}
 </script>
 <style>
 table, th, td {
@@ -12,27 +26,8 @@ table, th, td {
 </head>
 <body>
 
-<table style="width:100%">
-  <tr>
-    <th></th>
-    <th></th> 
-    <th></th>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
+<table style="width:100%" id="field">
+
 </table>
 
 </body>
