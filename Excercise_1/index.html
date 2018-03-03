@@ -1,34 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script>
-var n = 0;
-
-function myCreateFunction() {
-    var table = document.getElementById("field");
-		for (int i = 0; i < n; i++) {
-			var row = table.insertRow(0);
-		}
-}
-
-for (int i = 0; i < n; i++) {
-	draw_to_table(i, i);
-}
-for (int i = 0; i < n; i++) {
-	draw_to_table(i, n-i);
-}
-</script>
 <style>
 table, th, td {
-    border: 1px solid black;
+  border: 1px solid black;
+}
+td {
+	width:50px;
+	height: 50px;
+}
+table {
+	width:100%;
+}
+.filled {
+	background-color: black;
 }
 </style>
 </head>
 <body>
 
-<table style="width:100%" id="field">
-
+<table id="grid">
 </table>
 
+<input id="sizeinput">
+</input>
+<button id="submitbutton" onclick="submit()">Submit here!
+</button>
+
+<script>
+var n = 5;
+function myFunction() {
+    var t = document.getElementById("grid");
+		for (var i = 0; i < n; i++) {
+			var row = t.insertRow(i);
+			for (var j = 0; j < n; j++) {
+				var cell = row.insertCell(j);
+				if (i == j) {
+					cell.classList.add("filled");
+				}
+				if (i + j == n - 1) {
+					cell.classList.add("filled");
+				}
+			}
+		}
+}
+
+function submit() {
+	n = parseInt(document.getElementById("sizeinput").value);
+	myFunction();
+}
+
+myFunction();
+</script>
 </body>
 </html>
