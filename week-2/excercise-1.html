@@ -5,10 +5,17 @@
   <title>Binary Adder!</title>
 </head>
 <body>
+  <input id="first"></input>
+  <input id="second"></input>
+  <button id="submitbutton" onclick="submit()">Submit here!</button>
+  <p id="output"></p>
   <script>
-    var first_num = "1100";
-    var second_num = "0110";
-    console.log((parseInt(first_num, 2) + parseInt(second_num, 2)).toString(2));
+    function submit() {
+      var first_num = Document.getElementById("first").value;
+      var second_num = Document.getElementById("second").value;
+      var total = (parseInt(first_num, 2) + parseInt(second_num, 2)).toString(2);
+      Document.getElementById("output").innerHTML(total);
+    }
   </script>
 </body>
 </html>
