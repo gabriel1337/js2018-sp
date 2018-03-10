@@ -11,10 +11,10 @@
   <p id="output"></p>
   <script>
     function submit() {
-      var first_num = Document.getElementById("first").value;
-      var second_num = Document.getElementById("second").value;
+      var first_num = document.getElementById("first").value;
+      var second_num = document.getElementById("second").value;
       var total = (parseInt(first_num, 2) + parseInt(second_num, 2)).toString(2);
-      Document.getElementById("output").innerHTML(total);
+      document.getElementById("output").innerHTML(total);
     }
   </script>
 </body>
