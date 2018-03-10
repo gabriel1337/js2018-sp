@@ -10,6 +10,9 @@
   <button id="submitbutton" onclick="submit()">Submit here!</button>
   <p id="output"></p>
   <script>
+    function reverse(x) {
+      return x.split("").reverse().join("");
+    }
     function binaryAdd(first, second) {
       var first = reverse(first);
       var second = reverse(second);
@@ -26,7 +29,6 @@
           final_second += 2 ** i;
         }
       }
-
       return (first + second).toString(2);
     }
     function submit() {
