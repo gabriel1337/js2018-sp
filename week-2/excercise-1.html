@@ -29,7 +29,7 @@
           final_second += 2 ** i;
         }
       }
-      return (first + second).toString(2);
+      return parseInt((first + second).toString(2));
     }
     function submit() {
       var first_num = document.getElementById("first").value;
