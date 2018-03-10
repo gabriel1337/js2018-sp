@@ -14,7 +14,11 @@
       var first_num = document.getElementById("first").value;
       var second_num = document.getElementById("second").value;
       var total = (parseInt(first_num, 2) + parseInt(second_num, 2)).toString(2);
-      document.getElementById("output").innerHTML = total;
+      if (isNan(total)) {
+        document.getElementById("output").innerHTML = "NOT BINARY";
+      } else {
+        document.getElementById("output").innerHTML = total;
+      }
     }
   </script>
 </body>
