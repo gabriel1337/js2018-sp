@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
 
+</head>
+<body>
+  <input id="box1"></input>
+  <input id="box2"></input>
+  <button id="submit" onclick="submit()">Submit!</button>
+  <p id="output"></p>
+  <script>
+  function test_the_same(x, y) {
+    if (JSON.stringify(x) == JSON.stringify(y)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function submit() {
+    var box1 = document.getElementById("box1").value;
+    var box2 = document.getElementById("box2").value;
+    var out = document.getElementById("output");
+
+    out.innerHTML = test_the_same(box1, box2);
+  }
+  </script>
+</body>
+</html>
