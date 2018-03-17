@@ -1,1 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Roman Numerals</title>
+  </head>
+  <body>
+    <script>
+      var charactaars = [1, 5, 10, 50, 100, 500, 1000]
+      var characters = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+      var total = 0;
+      var romans = "MDCIV";
 
+      iv = romans.indexOf("IV");
+      ix = romans.indexOf("IX");
+      il = romans.indexOf("IL");
+      ic = romans.indexOf("IC");
+      id = romans.indexOf("ID");
+      im = romans.indexOf("IM");
+
+      if (iv > -1) {
+        total += 4;
+        romans.replace("IV", "");
+      }
+      if (ix > -1) {
+        total += 9;
+        romans.replace("IX", "");
+      }
+      if (il > -1) {
+        total += 49;
+        romans.replace("IL", "");
+      }
+      if (ic > -1) {
+        total += 99;
+        romans.replace("IC", "");
+      }
+      if (id > -1) {
+        total += 499;
+        romans.replace("ID", "");
+      }
+      if (im > -1) {
+        total += 999;
+        romans.replace("IM", "");
+      }
+
+      for (var i = 0; i < romans.length; i++) {
+        if (romans[i] == "I") {
+          romans[i] = "";
+          total += 1;
+        }
+        if (romans[i] == "V") {
+          romans[i] = "";
+          total += 5;
+        }
+        if (romans[i] == "X") {
+          romans[i] = "";
+          total += 10;
+        }
+        if (romans[i] == "L") {
+          romans[i] = "";
+          total += 50;
+        }
+        if (romans[i] == "C") {
+          romans[i] = "";
+          total += 100;
+        }
+        if (romans[i] == "D") {
+          romans[i] = "";
+          total += 500;
+        }
+        if (romans[i] == "M") {
+          romans[i] = "";
+          total += 1000;
+        }
+      }
+
+      console.log(total);
+    </script>
+  </body>
+</html>
