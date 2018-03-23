@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sorter</title>
+  </head>
+  <p id="paragraph"></p>
+  <body>
+    <p>Hi there!</p>
+    <script>
+    function remove(n, list) {
+      var index = list.indexOf(n);
+      if (index >= 0) {
+        list.splice(index, 1);
+      }
+      console.log("Array:");
+      document.getElementById("paragraph").innerHTML = list;
+    }
 
+    function low(x) {
+      lowest = x[0];
+      for (var i = 0; i < x.length; i++) {
+        if (i < lowest) {
+          lowest = i;
+        }
+      }
+      return lowest;
+    }
+
+    function sorty(x) {
+      var final = [];
+      while (x.length > 0) {
+        lowest = low(x);
+        x = remove(lowest, x);
+        final += lowest;
+        console.log(x);
+      }
+      console.log(final);
+    }
+
+    //console.log(remove(49, [23, 52, 76, 49, 56, 18, 46]));
+    console.log(sorty([23, 54, 76, 12, 56, 18, 54]));
+    </script>
+  </body>
+</html>
