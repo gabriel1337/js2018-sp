@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Weather</title>
+</head>
+<body>
+  <input id="city"></input>
+  <button onclick="submit()">Click me!</button>
+  <p id="weather"></p>
+  <p id="temp"></p>
+  <script>
+  function submit() {
+    var city = document.getElementById("city").value;
+    var url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=d279148384493f8341a747bea5fd7d68";
+    fetch(url).then(
+      function response(response) {
+        return response.json();
+      }).then(
+      function printOut(myJSON) {
+        var weather = myJSON.weather[0].main;
+        var temp = (myJSON.main.temp-273)*1.8+32;
+        document.getElementById("weather").innerHTML = "Weather: " + weather;
+        document.getElementById("temp").innerHTML = "Temperature: " + Number(temp).toFixed(2);
+      }
+    )
+  }
+  </script>
+</body>
+</html>
